@@ -1,4 +1,4 @@
-$(document).ready(function() {
+window.onload = function() {
     // Call the dataTables jQuery plugin
     $('#dataTable').DataTable();
 
@@ -7,4 +7,4 @@ $(document).ready(function() {
         e.preventDefault();
         $("body").toggleClass("sb-sidenav-toggled");
     });
-});
+}
