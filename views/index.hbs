@@ -1,2 +1,28 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{> navbar }}
+
+<div class="container">
+    
+    <div class="row">
+        <div class="card-items mt-3 mb-3">
+            {{# each posts}}
+            <div class="col-xs-12 col-sm-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="card-content">
+                            <h5 class="card-title">{{ title }}</h5>
+                            <p class="card-text mb-3">{{ description }}</p>
+                        </div>
+    
+                        <div class="card-foot">
+                            <span class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ date }}</span> |
+                            <span class="author"><i class="fa fa-user" aria-hidden="true"></i> {{ author }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+
