@@ -38,6 +38,16 @@
 
 /* ===== ADMIN ===== */
 
+
+/* Modal */
+
+.modal.show .modal-dialog {
+    margin-top: 100px;
+}
+
+
+/* SVG-icons */
+
 .svg-inline--fa {
     display: inline-block;
     font-size: inherit;
@@ -50,6 +60,7 @@
 /* ============================================================================== */
 
 .sb-topnav {
+    height: 56px;
     position: fixed;
     top: 0;
     right: 0;
@@ -78,7 +89,66 @@
 
 /* ============================================================================== */
 
-#layoutSidenav_nav {
+#layoutSidenav #layoutSidenav_nav {
+    flex-basis: 225px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease-in-out;
+    z-index: 1038;
+    transform: translateX(-225px);
+}
+
+#layoutSidenav #layoutSidenav_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    flex-grow: 1;
+    min-height: calc(100vh - 56px);
+    margin-left: -225px;
+}
+
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(0);
+}
+
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1037;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media (min-width: 992px) {
+    #layoutSidenav #layoutSidenav_nav {
+        transform: translateX(0);
+    }
+    #layoutSidenav #layoutSidenav_content {
+        margin-left: 0;
+        transition: margin 0.15s ease-in-out;
+    }
+    .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+        transform: translateX(-225px);
+    }
+    .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
+        margin-left: -225px;
+    }
+    .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
+        display: none;
+    }
+}
+
+
+/* ============================================================================== */
+
+#layoutSidenav #layoutSidenav_nav {
     width: 225px;
     height: 100vh;
     z-index: 1038;
@@ -89,11 +159,11 @@
 }
 
 .sb-sidenav {
+    height: 100%;
+    padding-top: 56px;
     display: flex;
     flex-direction: column;
-    height: 100%;
     flex-wrap: nowrap;
-    padding-top: 56px;
     background-color: #212529;
     color: rgba(255, 255, 255, 0.5);
 }
@@ -159,7 +229,7 @@
 
 /* ============================================================================== */
 
-#layoutSidenav_content {
+#layoutSidenav #layoutSidenav_content {
     padding-left: 225px;
-    padding-top: 56px;
+    top: 56px;
 }
