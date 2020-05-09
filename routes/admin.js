@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-// const Post = require('../models/post');
 const posts = require('../controllers/postController');
 
 // GET - всі пости
@@ -21,7 +20,7 @@ router.post('/create', posts.create);
 
 
 // // DELETE - видалити
-// router.delete('/:id', products.delete);
+router.get('/delete/:id', posts.delete);
 
 // ========================================
 

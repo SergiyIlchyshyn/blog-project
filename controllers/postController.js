@@ -26,7 +26,7 @@ exports.findOne = (req, res) => {
 
 // Update a note identified by the noteId in the request
 exports.update = (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     var postId = req.params.id;
     var update = {
         title: req.body.postTitle,
@@ -37,8 +37,8 @@ exports.update = (req, res) => {
     //записати зміни в БД
     Post.findByIdAndUpdate(postId, update)
         .then(result => {
-            console.log(result);
-            res.redirect('/');
+            // console.log(result);
+            res.redirect('/admin/dashboard');
         })
         .catch(err => {
             consolo.error(err.message);
@@ -48,7 +48,7 @@ exports.update = (req, res) => {
 
 // Create and Save
 exports.create = (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let newPost = new Post({
         title: req.body.postTitle,
         description: req.body.postDescription,
@@ -58,7 +58,19 @@ exports.create = (req, res) => {
     // записати в БД
     newPost.save()
         .then(result => {
-            res.redirect('/');
+            res.redirect('/admin/dashboard');
+        })
+        .catch(err => {
+            consolo.error(err.message);
+            throw err;
+        })
+};
+
+// Delete a note identified by the noteId in the request
+exports.delete = (req, res) => {
+    Post.findByIdAndDelete(req.params.id)
+        .then(p => {
+            res.redirect('/admin/dashboard');
         })
         .catch(err => {
             consolo.error(err.message);

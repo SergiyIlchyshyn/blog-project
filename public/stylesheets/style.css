@@ -41,7 +41,8 @@
 
 /* Button */
 
-a.btn-danger {
+a.btn-danger,
+a.btn-danger:hover {
     color: #fff;
 }
 

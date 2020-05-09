@@ -129,7 +129,7 @@
                             </svg><!-- <i class="fa fa-table mr-1"></i> -->Table Posts
                         </div>
                         <div>
-                            <a type="button" class="btn btn-success btn-block" href="/admin/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+                            <a  href="/admin/create" class="btn btn-success btn-block"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
                         </div> <!-- Add Button -->
                     </div> <!-- End Card Header -->
                     <div class="card-body">
@@ -165,8 +165,8 @@
                                                     <td>{{ author }}</td>
                                                     <td>{{ date }}</td>
                                                     <td>
-                                                        <a type="button" class="btn btn-primary btn-block" href="/admin/edit/{{_id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                        <a type="button" onclick="return confirm('Ви впевнені?');" class="btn btn-danger btn-block"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                        <a href="/admin/edit/{{_id}}" class="btn btn-primary btn-block" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                        <a href="/admin/delete/{{_id}}" onclick="return confirm('Ви впевнені?');" class="btn btn-danger btn-block" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
                                                 {{/each}}
