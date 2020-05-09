@@ -158,18 +158,18 @@
                                             </tfoot> <!-- End Table Footer -->
                                             <tbody>
 
-                                                {{!-- {{# each posts}}
+                                                {{# each posts}}
                                                 <tr>
                                                     <td>{{ title }}</td>
                                                     <td>{{ description }}</td>
                                                     <td>{{ author }}</td>
                                                     <td>{{ date }}</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" href='#editModal'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                                        <a type="button" class="btn btn-primary btn-block" href="/admin/edit/{{_id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                                         <button type="button" onclick="return confirm('Вы уверены?');" class="btn btn-danger btn-block"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                                     </td>
                                                 </tr>
-                                                {{/each}} --}}
+                                                {{/each}}
                                                 
                                             </tbody> <!-- End Table Body -->
                                         </table>
