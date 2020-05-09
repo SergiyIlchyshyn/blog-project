@@ -45,3 +45,23 @@ exports.update = (req, res) => {
             throw err;
         })
 };
+
+// Create and Save
+exports.create = (req, res) => {
+    console.log(req.body);
+    let newPost = new Post({
+        title: req.body.postTitle,
+        description: req.body.postDescription,
+        author: req.body.postAuthor,
+        date: req.body.postDate
+    });
+    // записати в БД
+    newPost.save()
+        .then(result => {
+            res.redirect('/');
+        })
+        .catch(err => {
+            consolo.error(err.message);
+            throw err;
+        })
+};

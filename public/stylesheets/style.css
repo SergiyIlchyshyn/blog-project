@@ -39,10 +39,10 @@
 /* ===== ADMIN ===== */
 
 
-/* Modal */
+/* Button */
 
-.modal.show .modal-dialog {
-    margin-top: 100px;
+a.btn-danger {
+    color: #fff;
 }
 
 

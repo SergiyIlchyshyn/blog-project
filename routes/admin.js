@@ -13,9 +13,11 @@ router.get('/edit/:id', posts.findOne);
 // // PUT - оновити
 router.post('/edit/:id', posts.update);
 
-
 // POST - створити 1 пост
-// router.post('/', posts.create);
+router.get('/create', function(req, res, next) {
+    res.render('admin/create', { title: 'Create' });
+});
+router.post('/create', posts.create);
 
 
 // // DELETE - видалити

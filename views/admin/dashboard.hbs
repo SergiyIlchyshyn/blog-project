@@ -129,8 +129,8 @@
                             </svg><!-- <i class="fa fa-table mr-1"></i> -->Table Posts
                         </div>
                         <div>
-                            <button type="button" class="btn btn-success btn-block" data-toggle="modal" href='#createModal'><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</button>
-                        </div>
+                            <a type="button" class="btn btn-success btn-block" href="/admin/create"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add</a>
+                        </div> <!-- Add Button -->
                     </div> <!-- End Card Header -->
                     <div class="card-body">
                         <div class="table-responsive">
@@ -166,7 +166,7 @@
                                                     <td>{{ date }}</td>
                                                     <td>
                                                         <a type="button" class="btn btn-primary btn-block" href="/admin/edit/{{_id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                        <button type="button" onclick="return confirm('Вы уверены?');" class="btn btn-danger btn-block"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                        <a type="button" onclick="return confirm('Ви впевнені?');" class="btn btn-danger btn-block"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
                                                 {{/each}}
@@ -193,115 +193,4 @@
         </footer> <!-- End Content Footer -->
     </div> <!-- End Content -->
 
-</div>
-
-{{!-- Edit Modal --}}
-<div id="editModal" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit post</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="postTitle">Title:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-header" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="postTitle" name="postTitle"
-                                placeholder="Enter post title">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="postDescription">Description:</label>
-                        <textarea class="form-control" id="postDescription" name="postDescription"
-                            rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="postAuthor">Author:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="postAuthor" name="postAuthor" placeholder="Enter post author">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="postDate">Date:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="postDate" name="postDate" placeholder="Enter post date">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="postSave">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{!-- Create Modal --}}
-<div id="createModal" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add post</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="addPostTitle">Title:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-header" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="addPostTitle" name="addPostTitle"
-                                placeholder="Enter post title">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="addPostDescription">Description:</label>
-                        <textarea class="form-control" id="addPostDescription" name="addPostDescription" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="addPostAuthor">Author:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="addPostAuthor" name="addPostAuthor"
-                                placeholder="Enter post author">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="addPostDate">Date:</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="addPostDate" name="addPostDate"
-                                placeholder="Enter post date">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" id="postCreate">Create</button>
-            </div>
-        </div>
-    </div>
 </div>
