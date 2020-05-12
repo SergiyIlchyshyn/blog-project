@@ -1,54 +1,51 @@
-
-<div class="container">
+{{> admin-header }}
+<main>
+    <div class="container-fluid">
     
-    <div class="row">
-        <div class="col-md-8 mt-3 mb-3">
-            <a class="btn btn-large btn-block btn-success" href="/admin/dashboard" role="button">Dashboard</a>
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="mb-3">Edit {{post.title}}</h4>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="postTitle">Title:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-header" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="postTitle" name="postTitle"
+                                placeholder="Enter post title"  value="{{post.title}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postDescription">Description:</label>
+                        <textarea class="form-control" id="postDescription" name="postDescription" rows="3">{{post.description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postAuthor">Author:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="postAuthor" name="postAuthor"
+                                placeholder="Enter post author" value="{{post.author}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postDate">Date:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="postDate" name="postDate" placeholder="Enter post date" value="{{post.date}}">
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-8">
-            <h4 class="mb-3">Edit {{post.title}}</h4>
-            <form method="POST">
-                <div class="form-group">
-                    <label for="postTitle">Title:</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-header" aria-hidden="true"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="postTitle" name="postTitle"
-                            placeholder="Enter post title"  value="{{post.title}}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="postDescription">Description:</label>
-                    <textarea class="form-control" id="postDescription" name="postDescription" rows="3">{{post.description}}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="postAuthor">Author:</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="postAuthor" name="postAuthor"
-                            placeholder="Enter post author" value="{{post.author}}">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="postDate">Date:</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="postDate" name="postDate" placeholder="Enter post date" value="{{post.date}}">
-                    </div>
-                </div>
-                <hr class="mb-4">
-                <button type="reset" class="btn btn-secondary">Reset</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
-        </div>
-    </div>
 
-</div>
+    </div>
+</main>
+{{> admin-footer }}

@@ -234,3 +234,8 @@ a.btn-danger:hover {
     padding-left: 225px;
     top: 56px;
 }
+
+#layoutSidenav #layoutSidenav_content main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}

@@ -18,8 +18,7 @@ router.get('/create', function(req, res, next) {
 });
 router.post('/create', posts.create);
 
-
-// // DELETE - видалити
+// DELETE - видалити
 router.get('/delete/:id', posts.delete);
 
 // ========================================
