@@ -3,6 +3,7 @@
 <div class="container">
     
     <div class="row">
+        {{#if posts.length}}
         <div class="card-items mt-3 mb-3">
             {{# each posts}}
             <div class="col-xs-12 col-sm-6 col-lg-4 mb-4">
@@ -22,6 +23,9 @@
             </div>
             {{/each}}
         </div>
+        {{else}}
+        <p>Posts not found.</p>
+        {{/if}}
     </div>
 
 </div>
