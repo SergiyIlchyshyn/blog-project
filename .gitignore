@@ -59,3 +59,5 @@ typings/
 
 # next.js build output
 .next
+packge-lock.json
+package-lock.json
